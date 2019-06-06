@@ -27,8 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
-        bool isWalking = hasHorizontalInput || hasVerticalInput;
-        m_Animator.SetBool("IsWalking", isWalking);
+        bool isRunning = hasHorizontalInput || hasVerticalInput;
+        m_Animator.SetBool("IsRunning", isRunning);
 
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation(desiredForward);
